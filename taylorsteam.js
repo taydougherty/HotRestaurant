@@ -12,6 +12,11 @@ var PORT = process.env.PORT || 3000;
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
+// Set up the array to be used to store data coming in
+// =============================================================
+var reservation = [];
+var waitlist = [];
+
 // Routes
 // =============================================================
 
