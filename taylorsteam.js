@@ -19,7 +19,20 @@ var waitlist = [];
 
 // Routes
 // =============================================================
-// 
+
+app.get("/", function(req, res) {
+  res.sendFile(path.join(__dirname, "home.html"));
+});
+
+app.get("/tables", function(req, res) {
+res.sendFile(path.join(__dirname, "tables.html"));
+});
+
+app.get("/reserve", function(req, res) {
+res.sendFile(path.join(__dirname, "reserve.html"));
+});
+
+// GET and Post for Reservation and Waitlist Table Data
 app.get("/api/tables", function(req,res) {
   res.json(reservation);
 });
@@ -48,4 +61,4 @@ app.post("/api/tables", function(req,res) {
 app.listen(PORT, function() {
     console.log("App listening on PORT " + PORT);
   });
-  
+
