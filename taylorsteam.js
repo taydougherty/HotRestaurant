@@ -14,8 +14,21 @@ app.use(express.json());
 
 // Set up the array to be used to store data coming in
 // =============================================================
-var reservation = [];
-var waitlist = [];
+var reservation = [
+  {
+  name: "jon",
+  phone: "(323)234-6572",
+  email: "jon@gmail.com",
+  id: "12"
+}];
+
+var waitlist = [
+  {
+    name: "Jeff",
+    phone: "(323)345-9263",
+    email: "jeff@gmail.com",
+    id: "14"
+  }];
 
 // Routes
 // =============================================================
@@ -32,7 +45,6 @@ app.get("/reserve", function(req, res) {
 res.sendFile(path.join(__dirname, "reserve.html"));
 });
 
-// GET and Post for Reservation and Waitlist Table Data
 app.get("/api/tables", function(req,res) {
   res.json(reservation);
 });
@@ -51,10 +63,6 @@ app.post("/api/tables", function(req,res) {
     res.json(false);
   }
 })
-
-
-
-
 
 // Starts the server to begin listening
 // =============================================================
