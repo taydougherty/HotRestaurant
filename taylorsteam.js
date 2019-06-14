@@ -20,15 +20,15 @@ var waitlist = [];
 // Routes
 // =============================================================
 // 
-app.get("/api/reservation", function(req,res) {
+app.get("/api/tables", function(req,res) {
   res.json(reservation);
 });
 
-app.get("/api/waitlist", function(req,res) {
+app.get("/api/reserve", function(req,res) {
   res.json(waitlist);
 });
 
-app.post("/api/reservation", function(req,res) {
+app.post("/api/tables", function(req,res) {
   if (reservation.length < 5) {
     reservation.push(req.body);
     res.json(true);
